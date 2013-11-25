@@ -1,7 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erikas_MSP430", "..\..\..\..\Desktop\Informatikos inzinerija\IV kursas\I pusmetis\Realaus laiko sistemos\Mano\Realaus laiko sistemos\MSP430\msp430\Erikas_MSP430.csproj", "{9B8A6D4D-C6D6-455C-888F-8674777B9729}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B8A6D4D-C6D6-455C-888F-8674777B9729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8A6D4D-C6D6-455C-888F-8674777B9729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8A6D4D-C6D6-455C-888F-8674777B9729}.Debug|x86.ActiveCfg = Debug|x86
+		{9B8A6D4D-C6D6-455C-888F-8674777B9729}.Debug|x86.Build.0 = Debug|x86
+		{9B8A6D4D-C6D6-455C-888F-8674777B9729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8A6D4D-C6D6-455C-888F-8674777B9729}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B8A6D4D-C6D6-455C-888F-8674777B9729}.Release|x86.ActiveCfg = Release|x86
+		{9B8A6D4D-C6D6-455C-888F-8674777B9729}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
