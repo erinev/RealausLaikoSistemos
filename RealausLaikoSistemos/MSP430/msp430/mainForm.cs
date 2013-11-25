@@ -39,8 +39,10 @@ namespace Erikas_MSP430
 
         private void ReceivedMSP430Data(object sender, SerialDataReceivedEventArgs e)
         {
+            const int startIndex = 2;
             string data = _serialPort.ReadLine();
-            data.Remove(2);
+            data.Remove(startIndex);
+
             if (StringContains(data, "ok", StringComparison.InvariantCultureIgnoreCase))
             {
                 ShowSuccessPopUp();
@@ -71,7 +73,10 @@ namespace Erikas_MSP430
 
         private void mainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (_serialPort.IsOpen) _serialPort.Close();
+            if (_serialPort.IsOpen)
+            {
+                _serialPort.Close();
+            }
         }
 
         private void mainForm_Load(object sender, EventArgs e)
@@ -81,7 +86,10 @@ namespace Erikas_MSP430
 
         private void btnDisconnect_Click(object sender, EventArgs e)
         {
-            if (_serialPort.IsOpen) _serialPort.Close();
+            if (_serialPort.IsOpen)
+            {
+                _serialPort.Close();
+            }
         }
 
         private void btnRedrawChart_Click(object sender, EventArgs e)
