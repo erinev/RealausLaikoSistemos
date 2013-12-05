@@ -12,17 +12,17 @@ namespace Erikas_MSP430
 
         public MainForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             _serialPort = new SerialPort();
 
-            _serialPort.DataReceived += ReceivedMSP430Data;
+            _serialPort.DataReceived += ProcessReceivedMSP430Data;
         }
 
         private delegate void SetTextDeleg(string text);
 
         private void btnConnect_Click(object sender, EventArgs e)
         {
-            SetPortSettings();
+            this.SetPortSettings();
 
             try
             {
@@ -37,19 +37,19 @@ namespace Erikas_MSP430
             }
         }
 
-        private void ReceivedMSP430Data(object sender, SerialDataReceivedEventArgs e)
+        private void ProcessReceivedMSP430Data(object sender, SerialDataReceivedEventArgs e)
         {
             const int startIndex = 2;
             string data = _serialPort.ReadLine();
             data.Remove(startIndex);
 
-            if (StringContains(data, "ok", StringComparison.InvariantCultureIgnoreCase))
+            if (this.StringContains(data, "ok", StringComparison.InvariantCultureIgnoreCase))
             {
-                ShowSuccessPopUp();
+                this.ShowSuccessPopUp();
             }
             else
             {
-                BeginInvoke(new SetTextDeleg(ProcessRecievedData), new object[] {data});
+                this.BeginInvoke(new SetTextDeleg(ProcessRecievedData), new object[] {data});
             }
         }
 
@@ -104,7 +104,7 @@ namespace Erikas_MSP430
                 _serialPort.Close();
             }
 
-            SetPortSettings();
+            this.SetPortSettings();
 
             _serialPort.Open();
             _serialPort.Write(string.Format("LOOP_INTV:{0};", NewIntervalTextBox.Text));
